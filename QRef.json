@@ -1,0 +1,84 @@
+[
+  {
+    "command": "npm init playwright@latest",
+    "description": "Playwright setup for project"
+  },
+  {
+    "command": "npx playwright test",
+    "description": "Runs the end-to-end tests"
+  },
+  {
+    "command": "npx playwright test --ui",
+    "description": "Starts the interactive UI mode"
+  },
+  {
+    "command": "npx playwright test --project=chromium",
+    "description": "Runs the tests only on Desktop Chrome"
+  },
+  {
+    "command": "npx playwright test example",
+    "description": "Runs the tests in a specific file"
+  },
+  {
+    "command": "npx playwright test –debug",
+    "description": "Runs the tests in debug mode"
+  },
+  {
+    "command": "npx playwright codegen",
+    "description": "Auto generate tests with Codegen"
+  },
+  {
+    "command": "npx playwright show-report",
+    "description": "Show Report"
+  },
+  {
+    "command": "npx playwright test --headed",
+    "description": "Runs tests with the browser UI visible"
+  },
+  {
+    "command": "npx playwright test --project=chromium",
+    "description": "Runs only on Chromium"
+  },
+  {
+    "command": "npx playwright test tests/example.spec.ts",
+    "description": "Runs a specific test file"
+  },
+  {
+    "command": "npx playwright test -g \"test name\"",
+    "description": "Runs a specific test by name",
+  },
+  {
+    "command": "npx playwright test --debug",
+    "description": "Opens Playwright Inspector for debugging"
+  },
+  {
+    "command": "allure generate ./allure-results -o ./allure-report",
+    "description": "Generates Allure report from results"
+  },
+{
+    "command": "allure open ./allure-report",
+    "description": "Opens the generated Allure report in a browser"
+}
+
+{
+    "command": "npx playwright test my.spec.ts",
+    "description": "Run a specific file"
+},
+{
+    "command": "npx playwright test --ui",
+    "description": "Run tests in UI mode (recommended for development)"
+},
+{
+    "command": "npx playwright test --project=firefox",
+    "description": "Run tests in a specific browser (project)"
+},
+{
+    "command": "npx playwright test --debug",
+    "description": "Debug tests with the built-in Inspector"
+},
+{
+    "command": "npx playwright test -g \"my test title\"",
+    "description": "Run with a specific title (using the -g flag)"
+}
+]
+
