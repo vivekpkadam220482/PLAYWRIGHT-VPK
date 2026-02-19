@@ -11,29 +11,25 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
 export default defineConfig({
   testDir: './tests',
-  reporter: [["html"], ["list"], ["allure-playwright"]],
-   /* Run tests in files in parallel */
   fullyParallel: true,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
+  workers: process.env.CI ? 1 : 4,
   retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+  timeout: 30 * 1000, // 30s for all tests
+  expect: { timeout: 5000}, // 5s for all assertions
+  reporter: [["html"], ["list"], ["allure-playwright"]],
+  forbidOnly: !!process.env.CI,
+  
+  
+use: {
     trace: 'on-first-retry',
     headless: true,
     video: 'retain-on-failure',
     screenshot: 'only-on-failure',
     viewport: { width: 1643, height: 850 },
-  },
+     },
 
   /* Configure projects for major browsers */
   projects: [
